@@ -14,7 +14,7 @@ import { HubConnectionBuilder } from "@microsoft/signalr";
 import { GetWeatherForecast } from "./apis/index";
 
 const connection = new HubConnectionBuilder().withUrl("http://localhost:5021/offers").build();
-
+connection.connectionId = "app1";
 connection.on("PushWeatherForecastToUser", data => {
   state.tableData = data;
 });
