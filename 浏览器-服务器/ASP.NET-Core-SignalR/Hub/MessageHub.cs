@@ -4,9 +4,9 @@ namespace BrowserServerSingnalR.Hub
 {
 	public class MessageHub: Hub<IMessageHubClient>
 	{
-		public async Task SendOffersToUser(List<string> message)
+		public async Task SendWeatherForecastToUser(List<WeatherForecast> message)
 		{
-			await Clients.All.SendOffersToUser(message);
+			await Clients.All.PushWeatherForecastToUser(message);
 		}
 	}
 }

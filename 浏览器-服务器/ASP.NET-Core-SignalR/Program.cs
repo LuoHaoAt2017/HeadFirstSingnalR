@@ -1,16 +1,17 @@
-using BrowserServerSingnalR;
 using BrowserServerSingnalR.Hub;
+using BrowserServerSingnalR.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<MyDbContext>();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // 将 SignalR 添加到 ASP.NET Core 依赖关系注入。
 builder.Services.AddSignalR();
+
 // 跨域策略
 builder.Services.AddCors(options =>
 {

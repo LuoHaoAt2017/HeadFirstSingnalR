@@ -2,6 +2,6 @@
 {
     public interface IMessageHubClient
     {
-		Task SendOffersToUser(List<string> message);
+		Task PushWeatherForecastToUser(List<WeatherForecast> message);
 	}
 }

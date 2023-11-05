@@ -1,7 +1,9 @@
-namespace BrowserServerSingnalR.Models
+namespace BrowserServerSingnalR
 {
     public class WeatherForecast
     {
+        public long Id { get; set; }
+
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }
